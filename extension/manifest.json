@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Job Evidence Kit — Bounded DOM Capture",
+  "version": "0.1.0",
+  "description": "用户触发、单标签、全局限额的岗位DOM采集；不登录、不聊天、不投递，不代表平台许可。",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_title": "为当前BOSS标签页打开有界采集控制窗口" },
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; connect-src 'none'; base-uri 'none'"
+  }
+}

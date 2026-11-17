@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "source": "boss",
+  "searches": [
+    {"keyword": "网站内容运营", "city_code": "101010100", "city_label": "北京（示例，需替换）"}
+  ],
+  "limits": {"max_jobs": 3, "max_pages": 2, "max_seconds": 180, "min_action_seconds": 8},
+  "review": {
+    "context": ["rules.example.md"],
+    "known_jobs": "known-jobs.example.json",
+    "rules": {
+      "allowed_locations": ["示例城市"],
+      "require_employer_owned": true,
+      "exclude_fixed_single_rest": true,
+      "exclude_independent_ads": true,
+      "target_salary_min": null,
+      "salary_review_floor": null
+    }
+  },
+  "storage": {"output_root": "/tmp/job-evidence-private-demo"}
+}

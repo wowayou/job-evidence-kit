@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>岗位本地标签页录制</title>
+  <link rel="stylesheet" href="/recorder.css">
+  <script type="module" src="/recorder.mjs"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">本地工具 · 不上传云端 · 不录音</p>
+      <h1>岗位标签页录制</h1>
+      <p>选择一次共享，录制结束后自动保存、抽帧和识字。搜索与滚动由你操作，不会自动投递。</p>
+      <p id="profile" class="badge">浏览器配置（profile）未核验，正在读取服务状态…</p>
+    </header>
+
+    <section aria-labelledby="before-heading">
+      <h2 id="before-heading">开始前</h2>
+      <ol>
+        <li>在准备录制的浏览器窗口完成登录，打开岗位搜索或详情页；如指定配置，请核对上方名称与目录。</li>
+        <li>点击下方按钮，在共享弹窗里选 <strong>岗位标签页</strong>，不要选整个屏幕或窗口。</li>
+        <li>最多看 5 个岗位；每屏停约 3 秒，滚动时留重叠。不要切到聊天、简历或登录页面。</li>
+      </ol>
+      <p class="notice">工具无法识别所选标签页的网站，请你确认是要录制的岗位页面；上方配置状态只表示名称与目录匹配，不能确认共享标签页所属配置。只接受单个标签页；录制页本身不作为共享目标。</p>
+    </section>
+
+    <section aria-labelledby="notes-heading">
+      <h2 id="notes-heading">检索条件与岗位链接 <span>（可选，但筛岗时需要原链接）</span></h2>
+      <label for="notes">每个链接写明公司和岗位；仅填写 JD 和公开招聘信息</label>
+      <textarea id="notes" rows="4" maxlength="12000" placeholder="例如：目标城市；岗位关键词。
+公司：…；岗位：…；链接：…"></textarea>
+      <p class="hint">不要粘贴 Cookie、验证码、联系方式、整页 HTML 或浏览器配置。</p>
+    </section>
+
+    <section aria-labelledby="record-heading">
+      <h2 id="record-heading">录制与处理</h2>
+      <div class="actions">
+        <button id="start" type="button" disabled>选择岗位标签页并开始</button>
+        <button id="stop" type="button" class="secondary" disabled>停止并保存</button>
+        <output id="timer" aria-label="录制剩余秒数">最长 180 秒</output>
+      </div>
+      <p id="status" role="status" aria-live="polite">正在连接本机服务…</p>
+      <p id="error" role="alert" tabindex="-1" hidden></p>
+      <video id="preview" aria-label="所选标签页的本地预览" autoplay muted playsinline hidden></video>
+      <div id="result" hidden>
+        <h3>材料包已生成，尚未筛岗</h3>
+        <p>把下方路径交给当前助手，再按原图和本次提供的筛选规则判断。</p>
+        <pre id="result-path"></pre>
+      </div>
+      <p class="hint">正常情况下计时 180 秒停止。系统挂起可能延后；超过 185 秒的文件会拒绝处理，不静默截断。保存识别期间请保留此页。</p>
+    </section>
+
+    <footer>
+      <p>仅通过本机回环地址传输。每次服务只接收一批录像，最多等待 15 分钟；录完后自动处理，无自动重试。</p>
+      <p>录屏、识字不代表岗位合适，也不保证平台风控安全。原始素材和结果都保存在仓库外。</p>
+    </footer>
+  </main>
+</body>
+</html>

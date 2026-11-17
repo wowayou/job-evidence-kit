@@ -1,0 +1,14 @@
+[
+  {
+    "company": "示例公司",
+    "role": "英文网站内容运营",
+    "salary": "旧演示区间，不继承",
+    "channel": "合成示例",
+    "job_id": "fixture_demo_A",
+    "card": "synthetic-records/example-ended.md",
+    "process_status": "已结束（仅演示，不自动重开）",
+    "links": [
+      {"url": "https://m.zhipin.com/job_detail/fixture_demo_A.html"}
+    ]
+  }
+]

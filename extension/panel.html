@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>有界岗位采集</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <main>
+    <h1>有界岗位采集</h1>
+    <p>仅浏览启动扩展时的原 BOSS 标签页。关闭或刷新此窗口会停止任务，丢失内存中的计划、已读岗位和导出入口，不会后台继续或自动恢复。需要保留材料时先点“立即停止”，再下载 JSON，最后关闭窗口。</p>
+    <p class="risk">用户授权不代表 BOSS 平台许可。自动化可能违反平台条款、导致验证或账号限制。遇到登录、验证、异源、新标签或正文缺失立即中断，不重试。</p>
+    <label for="plan">导入浏览计划 JSON（最大 32 KiB）</label>
+    <input id="plan" type="file" accept=".json,application/json">
+    <p id="plan-status">尚未导入计划。</p>
+    <div id="plan-summary"></div>
+    <p class="hint">每个关键词只访问首个搜索页。页数、岗位数、总时长由所有关键词共享；每次导航前完整等待所设间隔。不会自动翻页或返回列表，不点击聊天或投递。</p>
+    <label class="consent"><input id="consent" type="checkbox">我已了解条款与账号风险，授权本次低频正常浏览和 DOM 读取，并会将导出材料仅保存到项目及公开仓库之外。</label>
+    <div class="actions">
+      <button id="start" type="button" disabled>开始本次任务</button>
+      <button id="stop" type="button" disabled>立即停止</button>
+    </div>
+    <p id="state" role="status" aria-live="polite">正在核对原目标标签页……</p>
+    <p id="progress"></p>
+    <ul id="jobs"></ul>
+    <ul id="warnings"></ul>
+    <div class="export">
+      <p>原始链接保留全部参数，可能包含私人标识。JSON 仅存项目外，禁止加入公开 Git。空结果与失败结果只能用于检查缺口。</p>
+      <button id="export" type="button" disabled>下载本次 JSON</button>
+    </div>
+  </main>
+  <script type="module" src="panel.mjs"></script>
+</body>
+</html>

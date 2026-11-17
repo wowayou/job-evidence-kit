@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+.env
+.env.*
+# Runtime material must also be outside this project; ignore is only defense in depth.
+recording.*
+session.json
+analysis/
+frames/
+ocr/
+context.md
+manifest.json
+review.md
+private/
+# Workflow data, not public examples
+*.private.json
+browser-capture.json
+jobs.json
+source.json
+reviews/
+# The extension manifest is public source, not a runtime report.
+!extension/manifest.json
